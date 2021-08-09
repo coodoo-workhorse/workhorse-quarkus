@@ -46,18 +46,10 @@ Add the following dependency to your project ([published on Maven Central](https
    ```xml
    <dependency>
        <groupId>io.coodoo</groupId>
-       <artifactId>workhorse</artifactId>
+       <artifactId>workhorse-Quarkus</artifactId>
        <version>2.0.0-RC2-SNAPSHOT</version>
    </dependency>
    ```
-   
-Depending on your environment there may be additional steps necessary. Have a look into our example projects: 
-
-- [Quarkus](https://gitlab.coodoo.io/workhorse/workhorse-example-quarkus)
-- [Wildfly](https://gitlab.coodoo.io/workhorse/workhorse-example-wildfly)
-- [Tomcat](https://gitlab.coodoo.io/workhorse/workhorse-example-tomcat)
-- [Java SE](https://gitlab.coodoo.io/workhorse/workhorse-example-java-se)
-
 
 ## Getting started
 

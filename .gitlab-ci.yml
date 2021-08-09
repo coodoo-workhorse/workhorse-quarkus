@@ -42,3 +42,22 @@ build & test:
       junit:
         - "target/surefire-reports/TEST-*.xml"
     expire_in: 2 hour
+
+deploy:
+  stage: deploy
+  tags:
+    - Java
+  only:
+    - tags
+  script:
+    # GPG stuff
+    - apk update && apk add gnupg
+    - echo "Import the GPG key"
+    - echo  "$workhorse_gpg" | base64 -d > private.key
+    - gpg --version
+    - export PASSPHRASE=$(echo "$workhorse_passphrase" | base64 -d)
+    - export OSS_PASSWORD=$(echo "$oss_password" | base64 -d)
+    - gpg --batch --import ./private.key
+    - rm ./private.key
+    # Release it
+    - mvn $MAVEN_CLI_OPTS -s release_settings.xml deploy -DskipTests -P release
