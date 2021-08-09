@@ -34,7 +34,6 @@ build & test:
     - Java
   script:
     - mvn $MAVEN_CLI_OPTS clean install
-    - mvn $MAVEN_CLI_OPTS test
   # artifacts:
   #   paths:
   #     - target/workhorse-quarkus.jar
