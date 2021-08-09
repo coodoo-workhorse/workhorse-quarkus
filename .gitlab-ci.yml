@@ -41,7 +41,7 @@ build & test:
   #   reports:
   #     junit:
   #       - "target/surefire-reports/TEST-*.xml"
-    expire_in: 2 hour
+  #  expire_in: 2 hour
 
 deploy:
   stage: deploy
