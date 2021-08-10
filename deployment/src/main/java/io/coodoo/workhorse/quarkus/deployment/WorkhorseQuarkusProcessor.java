@@ -29,8 +29,13 @@ class WorkhorseQuarkusProcessor {
         return new IndexDependencyBuildItem("io.coodoo", "workhorse");
     }
 
+    
     @BuildStep
     public void declareWorkhorseAsBean(CombinedIndexBuildItem index, BuildProducer<AdditionalBeanBuildItem> additionalBeans) {
+
+        // All cdi-Beans are here registered to be available in quarkus application
+        // In the future we can select beans that we want to expose to an quarkus application.
+        // I.e register WorkhorseService but not WorkhorseController.
         List<String> workhorseBeans = index.getIndex().getKnownClasses().stream().filter(ci -> !Modifier.isAbstract(ci.flags())).map(ci -> ci.name().toString())
                         .filter(c -> c.startsWith("io.coodoo.workhorse.")).collect(Collectors.toList());
 
