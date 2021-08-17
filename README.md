@@ -46,7 +46,7 @@ Add the following dependency to your project ([published on Maven Central](https
    ```xml
    <dependency>
        <groupId>io.coodoo</groupId>
-       <artifactId>workhorse-Quarkus</artifactId>
+       <artifactId>workhorse-quarkus</artifactId>
        <version>2.0.0-RC2-SNAPSHOT</version>
    </dependency>
    ```
