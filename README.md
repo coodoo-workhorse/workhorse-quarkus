@@ -74,6 +74,29 @@ To learn more about the engine have a look on the full documentation.
 
 - [Workhorse](https://gitlab.coodoo.io/workhorse/-/blob/master/README.md)
 
+### Scheduled worker
+
+To perform scheduled worker on Quarkus the worker must have the scope `@Startup`. So the bean is instantiated at startup of the quarkus application and can be found by workhorse.
+
+```java
+@Startup
+@InitialJobConfig(schedule = "0 30 3 0 0 0", description = "Log nightly")
+public class HelloWorldWorker extends WorkerWith<String> {
+
+    private final Logger log = LoggerFactory.getLogger(HelloWorldWorker.class);
+
+    @Override
+    public void onSchedule() {
+        createExecution("Workhorse");
+    }
+
+    @Override
+    public void doWork(String environment) {
+        log.info("Hello World to: " + environment);
+    }
+}
+```
+
 ## Changelog
 
 All release changes can be viewed on our [changelog](./CHANGELOG.md).
