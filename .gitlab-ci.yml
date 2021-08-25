@@ -36,12 +36,12 @@ build & test:
     - mvn $MAVEN_CLI_OPTS clean install
     - mvn $MAVEN_CLI_OPTS test
   artifacts:
-   paths:
-     - runtime/target/workhorse-quarkus.jar
-   reports:
-     junit:
-       - "target/surefire-reports/TEST-*.xml"
-  expire_in: 2 hour
+    paths:
+      - runtime/target/workhorse-quarkus.jar
+    reports:
+      junit:
+        - "target/surefire-reports/TEST-*.xml"
+    expire_in: 2 hour
 
 deploy:
   stage: deploy
