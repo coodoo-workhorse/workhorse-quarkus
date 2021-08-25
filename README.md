@@ -37,7 +37,7 @@ Add the following dependency to your project ([published on Maven Central](https
    ```
 ### Start the engine
 
-You can now start the engine. For it just call the method `start()` of the `WorkhorseService` in a singleton bean (i.e `StartUp`) of your application. You can also define which persistence you want to use. There is also a `stop()` method to halt that beast.
+You can now start the engine. For it just call the method `start()` of the `WorkhorseService` in a singleton bean (i.e `StartUp`) of your application. You can also define which persistence you want to use. There is also a `stop()` method to halt that beast. :)
 
 ```java
 import javax.enterprise.context.ApplicationScoped;
