@@ -51,7 +51,7 @@ deploy:
     - tags
   script:
     # GPG stuff
-    - apk update && apk add gnupg
+    - apt-get update && apt-get gnupg
     - echo "Import the GPG key"
     - echo  "$workhorse_gpg" | base64 -d > private.key
     - gpg --version
