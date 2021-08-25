@@ -26,7 +26,7 @@ Just fire jobs on demand when ever from where ever in your code and Workhorse wi
 
 ### Maven dependency
 
-Add the following dependency to your project ([published on Maven Central](https://search.maven.org/artifact/io.coodoo/workhorse))
+Add the following dependency to your project ([published on Maven Central](https://search.maven.org/artifact/io.coodoo/workhorse-quarkus))
    
    ```xml
    <dependency>
