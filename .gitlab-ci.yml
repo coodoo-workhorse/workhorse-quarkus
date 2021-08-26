@@ -1,4 +1,4 @@
-image: maven:3.8.2-jdk-11
+image: maven:3-jdk-11
 
 variables:
   # This will supress any download for dependencies and plugins or upload messages which would clutter the console log.
@@ -40,7 +40,7 @@ build & test:
       - runtime/target/workhorse-quarkus.jar
     reports:
       junit:
-        - "target/surefire-reports/TEST-*.xml"
+        - "runtime/target/surefire-reports/TEST-*.xml"
     expire_in: 2 hour
 
 deploy:
@@ -53,8 +53,8 @@ deploy:
     # GPG stuff
     - apt-get update && apt-get install gnupg
     - echo "Import the GPG key"
-    - echo  ${workhorse_gpg}
-    - echo  ${workhorse_gpg} | base64 -d > private.key
+    - echo  $workhorse_gpg
+    - echo  $workhorse_gpg | base64 -d > private.key
     - ls -la ./
     - cat private.key
     - gpg --version
