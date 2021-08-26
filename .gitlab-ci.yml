@@ -53,8 +53,8 @@ deploy:
     # GPG stuff
     - apt-get update && apt-get install gnupg
     - echo "Import the GPG key"
-    - echo  $workhorse_gpg
-    - echo  $workhorse_gpg | base64 -d > private.key
+    - echo  "$workhorse_gpg"
+    - echo  "$workhorse_gpg" | base64 -d > private.key
     - ls -la ./
     - cat private.key
     - gpg --version
