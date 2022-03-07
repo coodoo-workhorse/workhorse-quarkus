@@ -32,7 +32,7 @@ Add the following dependency to your project ([published on Maven Central](https
    <dependency>
        <groupId>io.coodoo</groupId>
        <artifactId>workhorse-quarkus</artifactId>
-       <version>2.0.0-RC4-SNAPSHOT</version>
+       <version>2.0.0-RC5-SNAPSHOT</version>
    </dependency>
    ```
 ### Start the engine
